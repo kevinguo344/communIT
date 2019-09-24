@@ -1,9 +1,4 @@
-#include <Servo.h>
-
-#define SERVO_NUM 6
-#define LEFT 95
-#define STOP 93
-#define RIGHT 91
+#include "communIT.h"
 
 int victor_pins[SERVO_NUM] = {2,3,4,5,6,7};
 int potentiometer_pins[SERVO_NUM] = {A0,A1,A2,A3,A4,A5};
