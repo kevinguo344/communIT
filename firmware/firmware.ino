@@ -17,7 +17,7 @@ void loop() {
   
 }
 
-void move(int ind){
+void moveMotor(int ind, int angle){
   int input = analogRead(potentiometer_pins[ind]);
   int state;
   if(input < 1023 && current_states[ind] == LEFT){
