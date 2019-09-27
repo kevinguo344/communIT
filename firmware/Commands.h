@@ -2,5 +2,5 @@
 using namespace std;
 class Commands{
     public: 
-        static void readCommand(string command);
+        static void readCommand(char command);
 };

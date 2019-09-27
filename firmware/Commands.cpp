@@ -1,5 +1,5 @@
 #include "communIT.h"
 
-void Commands::readCommand(string a){
+void Commands::readCommand(char command){
     
 }

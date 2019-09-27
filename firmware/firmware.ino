@@ -16,8 +16,8 @@ void setup() {
 void loop() {
   if(Serial.available()){
     String com = Serial.readString();
-    string cmd* = new string(com.c_str());
-    Commands::readCommand(cmd*);
+    //string *cmd = ;
+    Commands::readCommand(com.c_str());
   }
 }
 
