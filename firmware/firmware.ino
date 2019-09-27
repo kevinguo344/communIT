@@ -14,7 +14,7 @@ void setup() {
 }
 
 void loop() {
-  
+  if(Serial.available)
 }
 
 void moveMotor(int ind, int angle){
