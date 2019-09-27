@@ -14,7 +14,11 @@ void setup() {
 }
 
 void loop() {
-  if(Serial.available)
+  if(Serial.available()){
+    String com = Serial.readString();
+    string cmd* = new string(com.c_str());
+    Commands::readCommand(cmd*);
+  }
 }
 
 void moveMotor(int ind, int angle){
