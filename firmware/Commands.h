@@ -1,6 +1,6 @@
-using namespace std;
-#include <string>
+#include <String.h>
+
 class Commands{
     public: 
-        static void readCommand(char* command);
+        static void readCommand(String command);
 };

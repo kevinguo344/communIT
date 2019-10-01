@@ -11,6 +11,6 @@ void Controls::moveMotor(int ind, int angle){
   }
   else if(input == 1023){ state = RIGHT; }
   else{ state = LEFT; }
-  servos[ind].write(state);
+  victors[ind].write(state);
   current_states[ind] = state;
 }
