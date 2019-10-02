@@ -3,14 +3,15 @@
 void Controls::moveMotor(int ind, int angle){
   int input = analogRead(potentiometer_pins[ind]);
   int state;
-  if(input < 1023 && current_states[ind] == LEFT){
-    state = LEFT;
+  // checks whether requested angle 
+  if(angle <= max_angle[ind] && angle >= min_angle[ind]){
+    int position_angle = map(input,0,1023,0,270);
+    if (position_angle < angle){ state = RIGHT; }
+    else if (position_angle > angle){ state = LEFT; }
+    else { state = STOP; }
+    
+    victors[ind].write(state);
+    current_states[ind] = state;
   }
-  else if(input > 0 && current_states[ind] == RIGHT){
-    state = RIGHT;
-  }
-  else if(input == 1023){ state = RIGHT; }
-  else{ state = LEFT; }
-  victors[ind].write(state);
-  current_states[ind] = state;
+  else { Serial.println("ERROR: REQUESTED ANGLE OUT OF RANGE FOR VICTOR"); }
 }

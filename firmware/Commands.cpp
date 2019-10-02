@@ -3,6 +3,7 @@
 void Commands::readCommand(String command){
     char code = command.charAt(0);
     command.remove(0,1);
+    String print_message;
     switch(code){
       case 'm': // Move a motor
         {
@@ -14,6 +15,10 @@ void Commands::readCommand(String command){
         }
         break;
       case 'l': // Light 
+        print_message = "Turning on Lights";
         break;
-    }
+      default:
+        print_message = "Message not understood";
+        break;
+    };
 }
