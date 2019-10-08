@@ -5,6 +5,27 @@ void Commands::readCommand(String command){
     command.remove(0,1);
     String print_message;
     switch(code){
+      case '1': // go to config 1
+        {
+          for(int i = 0; i < SERVO_NUM; i++){
+            Controls::moveMotor(i, config1_positions[i]);
+          }
+          Serial.write("Done");
+        }
+      case '2': // go to config 2
+        {
+          for(int i = 0; i < SERVO_NUM; i++){
+            Controls::moveMotor(i, config2_positions[i]);
+          }
+          Serial.write("Done");
+        }
+      case '3': // go to config 3
+        {
+          for(int i = 0; i < SERVO_NUM; i++){
+            Controls::moveMotor(i, config3_positions[i]);
+          }
+          Serial.write("Done");
+        }
       case 'm': // Move a motor
         {
           int i, theta;

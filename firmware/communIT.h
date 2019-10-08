@@ -25,3 +25,8 @@ static int max_angle[SERVO_NUM] = {90,90,90,90,90,90};
 static int min_angle[SERVO_NUM] = {0,0,0,0,0,0};
 
 static Servo victors[SERVO_NUM];
+
+// preconfigured motor positions
+static int config1_positions[SERVO_NUM] = {30,20,15,0,90,60};
+static int config2_positions[SERVO_NUM] = {30,20,15,0,90,60};
+static int config3_positions[SERVO_NUM] = {30,20,15,0,90,60};
