@@ -1,6 +1,43 @@
 <!DOCTYPE html>
-	<head><title>{{ title }}</title></head>
+<html lang="en">
+<head>
+	<title>{{ title }}</title>
+	<!-- Basic Page Needs
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>Your page title here :)</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="../static/css/normalize.css">
+	<link rel="stylesheet" href="../static/css/skeleton.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+
+	<!-- Favicon
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/png" href="images/favicon.png">
+</head>
 	<body>
-		<h1>Hello World!</h1>
+		<div class="container">
+			<div class="row">
+				<h1>Hello World!</h1>
+				<h2 class="{{ current_config }}">Current Configuration: <b>{{ current_state }}</b></h2>
+			</div>
+			<div class="row">
+				<a class="three columns" id="{{ config1_state }}" href="/1"><h3>Config 1</h3></a>
+				<a class="three columns" id="{{ config2_state }}" href="/2"><h3>Config 2</h3></a>
+				<a class="three columns" id="{{ config3_state }}" href="/3"><h3>Config 3</h3></a>
+			</div>
+		</div>
 	</body>
 </html>
