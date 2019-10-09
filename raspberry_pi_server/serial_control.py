@@ -39,7 +39,7 @@ def action(config):
 		config2_state = "False"
 		config3_state = "True"
 	global current_config
-	ser.write(new_config)
+	ser.write(bytes(new_config),'utf-8')
 	current_config = new_config
 	if ser.read() == 'Done':
 		actual_state = "Complete"
