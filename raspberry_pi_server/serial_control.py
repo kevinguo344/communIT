@@ -22,7 +22,7 @@ current_config = 0
 def index():
 	return render_template('index.html', **templateData)
 
-@app.route("/<configuration>")
+@app.route("/<config>")
 def action(config):
 	# checks which state the thing is
 	if config == "1":
