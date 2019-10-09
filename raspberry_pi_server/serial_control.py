@@ -23,18 +23,18 @@ def index():
 @app.route("/<config>")
 def action(config):
 	# checks which state the thing is
-	if config == "1":
-		new_config = "1"
+	if config == '1':
+		new_config = '1'
 		config1_state = "True"
 		config2_state = "False"
 		config3_state = "False"
-	if config == "2":
-		new_config = "2"
+	if config == '2':
+		new_config = '2'
 		config1_state = "False"
 		config2_state = "True"
 		config3_state = "False"
-	if config == "3":
-		new_config = "3"
+	if config == '3':
+		new_config = '3'
 		config1_state = "False"
 		config2_state = "False"
 		config3_state = "True"
