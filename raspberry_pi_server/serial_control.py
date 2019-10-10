@@ -52,7 +52,7 @@ def action(config):
 		'config1_state': config1_state,
 		'config2_state': config2_state,
 		'config3_state': config3_state,
-		'current_state:': current_state,
+		'current_state:': str(current_state),
 		'current_config': current_config
 	}
 	return render_template('index.html', **templateData)
