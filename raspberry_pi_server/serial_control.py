@@ -39,7 +39,7 @@ def action(config):
 		config2_state = "False"
 		config3_state = "True"
 	global current_config
-
+	current_state = 0
 	if(current_config != new_config):
 		ser.write(str.encode(new_config))
 		current_config = new_config
