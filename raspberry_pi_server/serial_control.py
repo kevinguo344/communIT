@@ -47,11 +47,13 @@ def action(config):
 	if(current_config != new_config):
 		ser.write(str.encode(new_config))
 		current_config = new_config
-		if ser.read() == 'Done':
-			actual_state = "Complete"
-		else:
-			actual_state = "Aborted"
-		current_state = actual_state		
+		
+		#if ser.read() == 'Done':
+		#	actual_state = "Complete"
+		#else:
+		#	actual_state = "Aborted"
+		#current_state = actual_state
+		current_state = current_config
 	templateData = {
 		'title': title,
 		'config1_state': config1_state,
