@@ -48,7 +48,7 @@ def action(config):
 		else:
 			actual_state = "Aborted"
 		current_state = actual_state		
-
+	print(current_config)
 	templateData = {
 		'config1_state': config1_state,
 		'config2_state': config2_state,
