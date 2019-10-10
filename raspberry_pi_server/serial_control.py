@@ -39,13 +39,15 @@ def action(config):
 		config2_state = "False"
 		config3_state = "True"
 	global current_config
-	ser.write(bytes(new_config),'utf-8')
-	current_config = new_config
-	if ser.read() == 'Done':
-		actual_state = "Complete"
-	else:
-		actual_state = "Aborted"
-	current_state = actual_state		
+	
+	if(current_config != new_config):
+		ser.write(new_config)
+		current_config = new_config
+		if ser.read() == 'Done':
+			actual_state = "Complete"
+		else:
+			actual_state = "Aborted"
+		current_state = actual_state		
 
 	templateData = {
 		'config1_state': config1_state,
