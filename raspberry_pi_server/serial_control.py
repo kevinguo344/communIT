@@ -39,9 +39,9 @@ def action(config):
 		config2_state = "False"
 		config3_state = "True"
 	global current_config
-	
+
 	if(current_config != new_config):
-		ser.write(new_config)
+		ser.write(str.encode(new_config))
 		current_config = new_config
 		if ser.read() == 'Done':
 			actual_state = "Complete"
