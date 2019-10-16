@@ -10,21 +10,21 @@ void Commands::readCommand(String command){
           for(int i = 0; i < SERVO_NUM; i++){
             Controls::moveMotor(i, config1_positions[i]);
           }
-          Serial.write("Done");
+          Serial.write('D');
         }
       case '2': // go to config 2
         {
           for(int i = 0; i < SERVO_NUM; i++){
             Controls::moveMotor(i, config2_positions[i]);
           }
-          Serial.write("Done");
+          Serial.write('D');
         }
       case '3': // go to config 3
         {
           for(int i = 0; i < SERVO_NUM; i++){
             Controls::moveMotor(i, config3_positions[i]);
           }
-          Serial.write("Done");
+          Serial.write('D');
         }
       case 'm': // Move a motor
         {
@@ -35,7 +35,7 @@ void Commands::readCommand(String command){
           Controls::moveMotor(i, theta);
         }
         break;
-      case 'l': // Light 
+      case 'l': // Light
         print_message = "Turning on Lights";
         break;
       default:

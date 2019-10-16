@@ -1,4 +1,5 @@
-#https://electronicshobbyists.com/control-arduino-using-raspberry-pi-arduino-and-raspberry-pi-serial-communication/
+# https://electronicshobbyists.com/control-arduino-using-raspberry-pi-arduino-and-raspberry-pi-serial-communication/
+# https://towardsdatascience.com/python-webserver-with-flask-and-raspberry-pi-398423cc6f5d
 
 import serial
 from flask import Flask, render_template
@@ -48,18 +49,17 @@ def action(config):
 		ser.write(str.encode(new_config))
 		current_config = new_config
 		
-		#if ser.read() == 'Done':
-		#	actual_state = "Complete"
-		#else:
-		#	actual_state = "Aborted"
-		#current_state = actual_state
-		current_state = current_config
+		if ser.read() == 'D':
+			actual_state = "Complete"
+		else:
+			actual_state = "Aborted"
+		current_state = actual_state
 	templateData = {
 		'title': title,
 		'config1_state': config1_state,
 		'config2_state': config2_state,
 		'config3_state': config3_state,
-		'current_state': str(current_state),
+		'current_state': current_state,
 		'current_config': current_config
 	}
 	return render_template('index.html', **templateData)
