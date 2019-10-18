@@ -7,7 +7,7 @@ from time import sleep
 
 app = Flask(__name__)
 
-ser = serial.Serial('/dev/ttyACM0',9600)
+ser = serial.Serial('/dev/ttyACM1',9600)
 
 current_config = 0
 templateData = {
