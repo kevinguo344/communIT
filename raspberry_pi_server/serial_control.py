@@ -48,7 +48,7 @@ def action(config):
 	if(current_config != new_config):
 		ser.write(str.encode(new_config))
 		current_config = new_config
-		
+		print(ser.read())
 		if ser.read() == 'D':
 			actual_state = "Complete"
 		else:
