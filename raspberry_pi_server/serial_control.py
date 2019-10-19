@@ -7,7 +7,7 @@ from time import sleep
 
 app = Flask(__name__)
 
-ser = serial.Serial('/dev/ttyACM1',9600)
+ser = serial.Serial('/dev/ttyACM0',9600)
 
 current_config = 0
 templateData = {
@@ -49,7 +49,7 @@ def action(config):
 		ser.write(str.encode(new_config))
 		current_config = new_config
 		print(ser.read())
-		if ser.read() == 'D':
+		if ser.read() == b'D':
 			actual_state = "Complete"
 		else:
 			actual_state = "Aborted"
