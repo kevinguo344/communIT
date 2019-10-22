@@ -50,9 +50,9 @@ def action(config):
 		current_config = new_config
 		print(ser.read())
 		if ser.read() == b'D':
-			actual_state = current_config + " Complete"
+			actual_state = "Config " + current_config + " Complete"
 		else:
-			actual_state = current_config + "Aborted"
+			actual_state = "Config " + current_config + "Aborted"
 		current_state = actual_state
 	templateData = {
 		'title': title,
